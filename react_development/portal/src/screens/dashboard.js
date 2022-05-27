@@ -17,6 +17,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import ResponsiveDrawer from '../components/drawer';
 import Header from '../components/header';
+import {Outlet} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -31,8 +32,9 @@ interface Props {
 function Dashboard() {
   return (
     <div className="Dashboard">
-    	<Header />
-    	<ResponsiveDrawer />
+      <Header />
+      <ResponsiveDrawer />
+      <Outlet></Outlet>
     </div>
   );
 }

@@ -8,11 +8,11 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import {Link} from "react-router-dom";
+import {Link,useLocation} from "react-router-dom";
+
 
 
 // const pages = ['Products', 'Pricing', 'Blog'];
@@ -36,6 +36,9 @@ const Header = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const location = useLocation();
+  // let a = '/profile/'.{location.state.name};
+
 
   return (
     <AppBar position="static">
@@ -118,6 +121,12 @@ const Header = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
+              <MenuItem>
+                
+                {/*<Link to={a}>
+                  <Typography textAlign="center">Profile</Typography>
+                </Link>*/}
+              </MenuItem>
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                 <Link to="/login">
